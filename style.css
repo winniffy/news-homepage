@@ -97,23 +97,48 @@ p {
     color: var(--off-white);
     font-weight: 600;
     margin-bottom: .5em;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
 }
 
 .sidetext_sub {
     color: var(--off-white);
-    font-size: .85rem;
+    font-size: 1rem;
+}
+
+.bright_future {
+    font-size: 3.6rem;
+    color: var(--very-dark-blue);
+    font-weight: 800;
+    line-height: 3.6rem;
+}
+
+.small_text {
+    font-size: 1rem;
+    color: var(--dark-gray-blue);
 }
 
 .grid3{
-    padding: 2em;
-    background-color: red;
     grid-area: c;
+    margin-top: 1em;
 }
+
+.read_btn {
+    font-size: .85rem;
+    margin-top: 2em;
+    background-color: var(--soft-red);
+    padding: 1em;
+    color: var(--off-white);
+    text-transform: capitalize;
+    font-weight: 500;
+    letter-spacing: .3em;
+    max-width: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+
 .grid4{
-    padding: 2em;
-    background-color: blue;
     grid-area: d;
+    margin-top: 1em;
 }
 .grid5{
     padding: 2em;
