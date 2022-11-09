@@ -16,7 +16,7 @@ body {
     font-size: 15px;
 }
 
-.attribution { font-size: 11px; text-align: center; }
+.attribution { font-size: 11px; text-align: center; margin-top: 2em;}
 .attribution a { color: hsl(228, 45%, 44%); }
 
 
@@ -53,7 +53,19 @@ p {
     gap: 2rem;
 }
 
+.nav_item {
+    cursor: pointer;
+}
+
+.nav_item:hover {
+    color: var(--soft-red);
+}
+
 .menu {
+    display: none;
+}
+
+.hero_mobile {
     display: none;
 }
 
@@ -98,6 +110,11 @@ p {
     font-weight: 600;
     margin-bottom: .5em;
     font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.sidetext_header:hover {
+    color: var(--soft-orange);
 }
 
 .sidetext_sub {
@@ -136,33 +153,112 @@ p {
     cursor: pointer;
 }
 
+.read_btn:hover {
+    background-color: var(--very-dark-blue);
+}
+
 .grid4{
     grid-area: d;
     margin-top: 1em;
 }
+
 .grid5{
-    padding: 2em;
-    background-color: green;
     grid-area: e;
+    margin-top: 3em;
 }
 .grid6{
-    padding: 2em;
-    background-color:crimson;
     grid-area: f;
+    margin-top: 3em;
 }
 .grid7{
-    padding: 2em;
-    background-color: orange;
     grid-area: g;
+    margin-top: 3em;
 }
 
+.bottom_flex {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.bottom_flex-img {
+    width: 30%;
+}
+
+.bottom_flex-text {
+    width: 70%;
+    padding-right: .8em;
+}
+
+.num_heading {
+    margin: 0;
+    color: var(--gray-blue);
+    font-size: 2rem;
+}
+
+.bottom_heading {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: .5em 0;
+}
 
 @media (max-width: 375px) {
+    .container {
+        padding: 1em 0;
+        margin: 0 auto;
+        width: 95%;
+        max-width: 375px;
+    }
+
     .nav_list_group {
         display: none;
     }
 
     .menu {
         display: block;
+    }
+
+    .hero_mobile {
+        display: block;
+    }
+
+    .hero_desktop {
+        display: none;
+    }
+
+    .grid {
+    grid-template-areas: 
+    'a'
+    'b'
+    'c'
+    'd'
+    'e'
+    'f'
+    'g'
+    ;
+    gap: 1em;
+    grid-template-columns: 1fr;
+    }
+
+    .bright_future {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+
+    .read_btn {
+        padding: .8em;
+    }
+
+    .num_heading {
+        font-size: 1.5rem;
+    }
+
+    .bottom_heading {
+        font-size: 1.1rem;
+        margin: .25em 0;
+    }
+
+    .small_text {
+        font-size: .85rem;
     }
 }
