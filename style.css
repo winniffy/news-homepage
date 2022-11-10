@@ -14,6 +14,7 @@
 body {
     font-family: 'Inter', sans-serif;
     font-size: 15px;
+    overflow-x: hidden;
 }
 
 .attribution { font-size: 11px; text-align: center; margin-top: 2em;}
@@ -42,6 +43,14 @@ p {
     justify-content: space-between;
 }
 
+.overlay {
+    inset: 0;
+    background-color: var(--very-dark-blue);
+    position: absolute;
+    opacity: 0.5;
+    display: none;
+}
+
 .nav_list {
     display: flex;
     align-items: center;
@@ -61,8 +70,18 @@ p {
     color: var(--soft-red);
 }
 
-.menu {
+.hamburger {
     display: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 35px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--very-dark-blue);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .hero_mobile {
@@ -207,17 +226,52 @@ p {
         padding: 1em 0;
         margin: 0 auto;
         width: 95%;
-        max-width: 375px;
     }
 
-    .nav_list_group {
-        display: none;
-    }
-
-    .menu {
+    .overlay.active {
         display: block;
     }
 
+    .nav_list_group {
+        position: fixed;
+        font-weight: 500;
+        font-size: 1rem;
+        flex-direction: column;
+        inset: 0 0 0 30%;
+        padding: min(30vh, 8em) 1.5em;
+        background-color: var(--off-white);
+        height: 100%;
+        margin: 0;
+        transition: 0.3s;
+        transform: translateX(100%);
+    }
+
+    .nav_list_group.active{
+        transform: translateX(0%);
+    }
+
+    /* hamburger styling */
+    .hamburger {
+        display: block;
+    }
+
+    .bar {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* hero images */
     .hero_mobile {
         display: block;
     }
@@ -229,15 +283,19 @@ p {
     .grid {
     grid-template-areas: 
     'a'
-    'b'
     'c'
     'd'
+    'b'
     'e'
     'f'
     'g'
     ;
     gap: 1em;
     grid-template-columns: 1fr;
+    }
+
+    .grid2 {
+        margin-top: 3em;
     }
 
     .bright_future {
@@ -249,12 +307,23 @@ p {
         padding: .8em;
     }
 
+    .grid6{
+        margin-top: 1.5em;
+    }
+    .grid7{
+        margin-top: 1.5em;
+    }
+
+    .bottom_flex {
+        gap: 1.5em;
+    }
+
     .num_heading {
         font-size: 1.5rem;
     }
 
     .bottom_heading {
-        font-size: 1.1rem;
+        font-size: 1rem;
         margin: .25em 0;
     }
 
